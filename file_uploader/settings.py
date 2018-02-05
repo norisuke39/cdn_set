@@ -119,3 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
+'''
+MEDIA_ROOT = os.path.join('/Users/hdymacuser/Documents/Work/07.WEB_alloca_appli/Django/file_uploader/upload_form/static/files','')
+MEDIA_URL = '/upload_form/'
+'''

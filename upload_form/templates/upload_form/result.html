@@ -1,0 +1,29 @@
+{% extends "upload_form/base.html" %}
+
+{% block title %}アップロード完了{% endblock title %}
+{% block content %}
+
+    <div align="center">
+        <h1 align="center">結果出力</h1>
+        <div>
+            予算：¥{{budget}}
+        </div>
+        <div>
+        <table border = 1>
+        <tr>
+        {% for image in image_names %}
+            <td><center>{{image}}</center></td>
+        {%endfor%}
+        </tr>
+        <tr>
+        {% for image in images %}
+            <td><img src ="{{image}}" width = "250"></td>
+        {%endfor%}
+        </tr>
+        </table>
+        </div>
+        <div>
+        <a href="{% url 'upload_form:form' %}"><button>戻る</button></a>
+        </div>
+    </div>
+{% endblock content %}

@@ -2,9 +2,18 @@
 
 {% block title %}アップローダサンプル{% endblock title %}
 {% block content %}
+
+<div>
+    <p>予算配分を行うファイルをアップロードしてください</p>
+    </div>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <input type="file" name="file">
-        <input type="submit" value="アップロード">
+        <input type="file"  class="dropify" name="file">
+        <input type="submit" value="アップロード">        
     </form>
+
+        <script>
+$('.dropify').dropify();
+</script>
+
 {% endblock content %}

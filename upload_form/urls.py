@@ -19,4 +19,6 @@ from upload_form import views
 urlpatterns = [
     url(r'^$', views.form, name = 'form'),
     url(r'^complete/', views.complete, name = 'complete'),
+    url(r'^choice_column/', views.choice_column, name = 'choice_column'),
+    url(r'^result/', views.result, name = 'result'),
 ]

@@ -319,7 +319,7 @@ div.ui-mobile-viewport {
 
 /* Button elements and input buttons */
 button.ui-button,
-input[type="checkbox"].ui-button {
+input.ui-button {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -328,7 +328,7 @@ input[type="checkbox"].ui-button {
 	width: 100%;
 }
 button.ui-button-inline,
-input[type="checkbox"].ui-button-inline,
+input.ui-button-inline,
 .ui-toolbar button.ui-button,
 .ui-toolbar-header button.ui-button,
 .ui-toolbar-footer button.ui-button {
@@ -336,11 +336,11 @@ input[type="checkbox"].ui-button-inline,
 }
 /* Firefox adds a 1px border in a button element. We negate this to make sure they have the same height as other buttons in controlgroups. */
 button.ui-button::-moz-focus-inner,
-input[type="checkbox"].ui-button::-moz-focus-inner {
+input.ui-button::-moz-focus-inner {
 	border: 0;
 }
 button.ui-button-icon-only,
-input[type="checkbox"].ui-button-icon-only {
+input.ui-button-icon-only {
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;

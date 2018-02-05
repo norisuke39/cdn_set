@@ -1,0 +1,54 @@
+{% extends "upload_form/base.html" %}
+
+{% block title %}アップロード完了{% endblock title %}
+{% block content %}
+<div>
+    <p>↓から予算配分したい粒度を選択してください</p>
+</div>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="ui-field-contain">
+        {% csrf_token %}
+            <fieldset data-role="controlgroup" data-type="horizontal">
+            <table id="table">
+        {% for column1 in input_data.df_columns%}
+                <th class="handle">{{column1}}</th>
+        {%endfor%}
+            </table>
+                </fieldset>
+            <script>tableDragger(document.querySelector("#table"));</script>
+        <div>
+        <p>↓日付項目を選択してください</p>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+        {% for column2 in input_data.df_date%}
+        {{column2}}
+        {%endfor%}
+            </fieldset>
+        </div>
+        <div>
+        <p>↓最大化する項目を選択してください</p>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+        {% for column3 in input_data.df_goal%}
+        {{column3}}
+        {%endfor%}
+            </fieldset>
+        </div>
+        <div>
+        <p>↓金額の項目を選択してください</p>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+        {% for column4 in input_data.df_control%}
+        {{column4}}
+        {%endfor%}
+            </fieldset>
+        </div>
+        <div>
+            <p>↓配分する総予算を入力してください</p>
+        ¥{{input_data.df_budget}}
+        </div>
+        <input type="submit" value="Simlation"　name="choices">  
+            </div>
+    </form>
+
+<div align="center">
+<a href="{% url 'upload_form:form' %}"><button>戻る</button></a>
+</div>
+{% endblock content %}
